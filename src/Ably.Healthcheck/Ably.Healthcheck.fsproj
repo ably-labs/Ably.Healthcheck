@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Version>0.0.1</Version>
+        <Authors>Michał Niegrzybowski</Authors>
+        <Company>Michał Niegrzybowski - MNie</Company>
+        <PackageId>Ably.Healthcheck</PackageId>
+        <Product>Ably.Healthcheck</Product>
+        <Description>Healthcheck for Ably.io services</Description>
+        <Copyright>Michał Niegrzybowski</Copyright>
+        <PackageLicense>https://github.com/MNie/Ably.Healthcheck/blob/master/LICENSE</PackageLicense>
+        <PackageProjectUrl>https://github.com/MNie/Ably.Healthcheck</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/MNie/Ably.Healthcheck</RepositoryUrl>
+        <RepositoryType>Git</RepositoryType>
+        <PackageTags>Ably, Healthcheck</PackageTags>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+        <DebugType>Full</DebugType>
+        <NoWarn>NU1603</NoWarn>
+        <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="ChannelCheck.fs" />
+        <Compile Include="TimerCheck.fs" />
+        <Compile Include="AssemblyInfo.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="ably.io" Version="1.2.4" />
+      <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="5.0.6" />
+    </ItemGroup>
+
+</Project>
