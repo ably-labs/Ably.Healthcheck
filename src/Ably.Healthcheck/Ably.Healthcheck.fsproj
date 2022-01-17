@@ -27,13 +27,14 @@
 
     <ItemGroup>
         <Compile Include="ChannelCheck.fs" />
+        <Compile Include="PingCheck.fs" />
         <Compile Include="TimerCheck.fs" />
         <Compile Include="AssemblyInfo.fs" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="ably.io" Version="1.2.4" />
-      <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="5.0.6" />
+      <PackageReference Include="ably.io" Version="1.2.6" />
+      <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="6.0.1" />
     </ItemGroup>
 
 </Project>
