@@ -5,14 +5,15 @@ open IO.Ably
 open IO.Ably.Realtime
 open Microsoft.Extensions.Diagnostics.HealthChecks
 
-type AblyChannelHealthCheck (ably: AblyRealtime, serviceName: string) =
+type AblyChannelHealthCheck (ably: AblyRealtime, serviceName: string, ?channelName: string) =
     interface IHealthCheck with
         member __.CheckHealthAsync (context, ct) =
             async {
                 if ct.IsCancellationRequested then
                     return HealthCheckResult(context.Registration.FailureStatus, $"Cancellation requested")
                 else
-                    let channel = ably.Channels.Get "healthcheck"
+                    let channelName = channelName |> Option.defaultValue "healthcheck"
+                    let channel = ably.Channels.Get channelName
                     match channel.State with
                     | ChannelState.Attached | ChannelState.Initialized ->
                         let! msg =

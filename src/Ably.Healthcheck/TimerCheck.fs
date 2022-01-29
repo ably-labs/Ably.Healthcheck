@@ -27,7 +27,7 @@ module internal TimerCheck =
             Error $"Ably timer check failed. `{nameof(m.Timestamp)}` is empty"
         | None -> Error "Ably failed to receive message"
 
-type AblyTimerHealthCheck (ably: AblyRealtime, serviceName: string, ?acceptableDiff: TimeSpan, ?sleepTimeForMsg: TimeSpan) =
+type AblyTimerHealthCheck (ably: AblyRealtime, serviceName: string, ?channelName: string, ?acceptableDiff: TimeSpan, ?sleepTimeForMsg: TimeSpan) =
     let messageTypeName = $"timer-{serviceName}"
     let acceptableTimeDiff =
         match acceptableDiff with
@@ -45,7 +45,8 @@ type AblyTimerHealthCheck (ably: AblyRealtime, serviceName: string, ?acceptableD
                     return HealthCheckResult(context.Registration.FailureStatus, $"Cancellation requested")
                 else
                     let msgs = ConcurrentBag()
-                    let channel = ably.Channels.Get "healthcheck"
+                    let channelName = channelName |> Option.defaultValue "healthcheck"
+                    let channel = ably.Channels.Get channelName
                     channel.Subscribe(messageTypeName, fun msg -> msgs.Add msg)
 
                     let now = DateTimeOffset.UtcNow
