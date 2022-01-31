@@ -4,7 +4,7 @@ open System
 open IO.Ably
 open Microsoft.Extensions.Diagnostics.HealthChecks
 
-type PingCheck (ably: AblyRealtime, serviceName: string, ?acceptableDiff: TimeSpan) =
+type AblyPingHealthCheck (ably: AblyRealtime, ?acceptableDiff: TimeSpan) =
     let acceptableTimeDiff =
         match acceptableDiff with
         | Some a -> a

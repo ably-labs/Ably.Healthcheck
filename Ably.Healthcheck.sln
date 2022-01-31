@@ -8,6 +8,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Ably.Healthcheck", "src\Abl
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Ably.Healthcheck.Tests", "tests\Ably.Healthcheck.Tests\Ably.Healthcheck.Tests.fsproj", "{3927D28C-2B92-420C-8C41-8AA11F4819F6}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Ably.Healthcheck.Example", "tests\Ably.Healthcheck.Example\Ably.Healthcheck.Example.fsproj", "{35745098-5126-4CC5-98A3-ED3EAEACED09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -16,6 +18,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4C79469F-BBA8-4911-8730-9188DB1AFECF} = {9F260DB5-61AA-4F00-9DB0-8F4ADB1F809D}
 		{3927D28C-2B92-420C-8C41-8AA11F4819F6} = {08DF8FAA-7599-4E19-B985-068516583214}
+		{35745098-5126-4CC5-98A3-ED3EAEACED09} = {08DF8FAA-7599-4E19-B985-068516583214}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{4C79469F-BBA8-4911-8730-9188DB1AFECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -26,5 +29,9 @@ Global
 		{3927D28C-2B92-420C-8C41-8AA11F4819F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3927D28C-2B92-420C-8C41-8AA11F4819F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3927D28C-2B92-420C-8C41-8AA11F4819F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35745098-5126-4CC5-98A3-ED3EAEACED09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35745098-5126-4CC5-98A3-ED3EAEACED09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35745098-5126-4CC5-98A3-ED3EAEACED09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35745098-5126-4CC5-98A3-ED3EAEACED09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
