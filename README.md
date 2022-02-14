@@ -2,7 +2,7 @@
 
 * NuGet Status [![NuGet](https://buildstats.info/nuget/Ably.Healthcheck?includePreReleases=true)](https://www.nuget.org/packages/Ably.Healthcheck)
 
-Library with Healtchecks to check a health of [Ably](ably.io) services.
+Library with Healtchecks to check a health of [Ably](https://ably.com/) services.
 Two checks are available:
 
 - Channel check,
