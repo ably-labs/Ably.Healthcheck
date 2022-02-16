@@ -10,6 +10,14 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Ably.Healthcheck.Tests", "t
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Ably.Healthcheck.Example", "tests\Ably.Healthcheck.Example\Ably.Healthcheck.Example.fsproj", "{35745098-5126-4CC5-98A3-ED3EAEACED09}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{9C75FFA3-37C0-4564-BF9B-77D54175DB8E}"
+ProjectSection(SolutionItems) = preProject
+	CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
+	CONTRIBUTING.md = CONTRIBUTING.md
+	README.md = README.md
+	SECURITY.md = SECURITY.md
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
