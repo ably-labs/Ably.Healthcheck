@@ -27,6 +27,8 @@ module internal TimerCheck =
             Error $"Ably timer check failed. `{nameof(m.Timestamp)}` is empty"
         | None -> Error "Ably failed to receive message"
 
+type SleepHigherThanAcceptableDiffException = exn
+
 type AblyTimerHealthCheck (ably: AblyRealtime, serviceName: string, ?channelName: string, ?acceptableDiff: TimeSpan, ?sleepTimeForMsg: TimeSpan) =
     let messageTypeName = $"timer-{serviceName}"
     let acceptableTimeDiff =
@@ -37,6 +39,10 @@ type AblyTimerHealthCheck (ably: AblyRealtime, serviceName: string, ?channelName
         match sleepTimeForMsg with
         | Some stfm -> stfm
         | None -> TimeSpan.FromSeconds 0.5
+     
+    do    
+        if sleepToGatherMsg > acceptableTimeDiff then
+            SleepHigherThanAcceptableDiffException () |> raise
             
     interface IHealthCheck with
         member __.CheckHealthAsync (context, ct) =
