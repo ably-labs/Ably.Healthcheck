@@ -8,6 +8,20 @@ open IO.Ably
 
 module TimerTests =
     let tests = testList "Timer" [
+        testList "TimerHealtcheck validation" [
+            testCase "sleep higher than acceptable diff" <| fun _ ->
+                let create () =
+                    let _ = AblyTimerHealthCheck(new AblyRealtime("empty"), "", "", TimeSpan.FromSeconds 2., TimeSpan.FromSeconds 10.)
+                    ()
+                    
+                Expect.throwsT<SleepHigherThanAcceptableDiffException> create ""
+                
+            testCase "sleep lower than acceptable diff" <| fun _ ->
+                let _ = AblyTimerHealthCheck(new AblyRealtime("empty"), "", "", TimeSpan.FromSeconds 20., TimeSpan.FromSeconds 10.)
+                    
+                Expect.isTrue true ""
+        ]
+        
         testList "Timer Check" [
             testCase "timespan not available" <| fun _ ->
                 let bag = ConcurrentBag()

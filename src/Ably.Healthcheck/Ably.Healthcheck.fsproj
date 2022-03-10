@@ -3,19 +3,20 @@
     <PropertyGroup>
         <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>0.0.2</Version>
+        <Version>0.1.0</Version>
         <Authors>Michał Niegrzybowski</Authors>
-        <Company>Michał Niegrzybowski - MNie</Company>
+        <Company>Ably Labs</Company>
         <PackageId>Ably.Healthcheck</PackageId>
         <Product>Ably.Healthcheck</Product>
         <Description>Healthcheck for Ably.io services</Description>
-        <Copyright>Michał Niegrzybowski</Copyright>
-        <PackageLicense>https://github.com/MNie/Ably.Healthcheck/blob/master/LICENSE</PackageLicense>
-        <PackageProjectUrl>https://github.com/MNie/Ably.Healthcheck</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/MNie/Ably.Healthcheck</RepositoryUrl>
+        <Copyright>2022 Ably Labs</Copyright>
+        <PackageLicense>https://github.com/ably-labs/Ably.Healthcheck/blob/main/LICENSE</PackageLicense>
+        <PackageProjectUrl>https://github.com/ably-labs/Ably.Healthcheck</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/ably-labs/Ably.Healthcheck</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
-        <PackageTags>Ably, Healthcheck</PackageTags>
+        <PackageTags>Ably, Healthcheck, Ping, Health</PackageTags>
         <LangVersion>latest</LangVersion>
+        <PackageIcon>logo-70x70.png</PackageIcon>
         <Nullable>enable</Nullable>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -30,6 +31,7 @@
         <Compile Include="PingCheck.fs" />
         <Compile Include="TimerCheck.fs" />
         <Compile Include="AssemblyInfo.fs" />
+        <None Include="..\..\img\logo-70x70.png" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
     <ItemGroup>

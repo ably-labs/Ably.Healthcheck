@@ -3,8 +3,9 @@
 * NuGet Status [![NuGet](https://buildstats.info/nuget/Ably.Healthcheck?includePreReleases=true)](https://www.nuget.org/packages/Ably.Healthcheck)
 
 Library with Healtchecks to check a health of [Ably](https://ably.com/) services.
-Two checks are available:
+Three checks are available:
 
+- Ping check,
 - Channel check,
 - Timer check.
 
@@ -18,17 +19,26 @@ member this.ConfigureServices(services: IServiceCollection) =
     ...
     services.AddHealthChecks()
         .AddCheck(
+            "AblyPing",
+            AblyPingHealthCheck(
+                ably,
+                TimeSpan.FromSeconds 1.
+            )
+        )
+        .AddCheck(
             "AblyChannel",
             AblyChannelHealthCheck(
                 ably,
-                "Name"
+                "ServiceName",
+                "ChannelName"
             )
         )
         .AddCheck(
             "AblyTimer",
             AblyTimerHealthCheck(
                 ably,
-                "Topic",
+                "ServiceName",
+                "ChannelName",
                 TimeSpan.FromSeconds1.,
                 TimeSpan.FromSeconds1.
             )
