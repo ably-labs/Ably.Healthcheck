@@ -81,3 +81,21 @@ member this.Configure(app: IApplicationBuilder, env: IWebHostEnvironment) =
         ) |> ignore
     ...
 ```
+
+## Contributing
+
+Do you want to contribute to this project? Have a look at our [contributing guide](./CONTRIBUTING.md).
+
+## Issues
+
+Did you find a bug? Do you want to suggest a feature? Please file an issue [here](https://github.com/ably-labs/Ably.Healthcheck/issues/new/choose).
+
+## More info
+
+- [Join our Discord server](https://discord.gg/q89gDHZcBK)
+- [Follow us on Twitter](https://twitter.com/ablyrealtime)
+- [Use our SDKs](https://github.com/ably/)
+- [Visit our website](https://ably.com)
+
+---
+[![Ably logo](https://static.ably.dev/badge-black.svg?dotnet-healthcheck)](https://ably.com)
