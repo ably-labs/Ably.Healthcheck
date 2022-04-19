@@ -82,6 +82,16 @@ member this.Configure(app: IApplicationBuilder, env: IWebHostEnvironment) =
     ...
 ```
 
+## Required capabilities and restrictions
+
+When configuring Ably Healthcheck's we need to provide a valid `ApiKey`. Beyond of that some additional [Capabilities and Restrictions](https://ably.com/docs/core-features/authentication#capability-operations) could be required to make the `HealthCheck's` work properly.
+
+- `Channel Healthcheck`
+  - requires `Publish` Capability, restricted at most to concrete channel (part of configuration),
+    
+- `Timer Healthcheck`
+  - requires `Publish` and `Subscribe` Capabilities, restricted at most to a concrete channel (part of configuration).
+
 ## Contributing
 
 Do you want to contribute to this project? Have a look at our [contributing guide](./CONTRIBUTING.md).
